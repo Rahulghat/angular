@@ -3,17 +3,19 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header-component/header-component';
 import { UserComponent } from './user-component/user-component';
 import { DUMMY_USERS } from './dummy-users';
-import { CommonModule ,NgForOf,SlicePipe} from '@angular/common';
+import { CommonModule, NgForOf, SlicePipe } from '@angular/common';
+import { TaskComponent } from './task-component/task-component';
 @Component({
-  imports: [HeaderComponent, UserComponent, NgForOf, SlicePipe],
+  imports: [HeaderComponent, UserComponent, NgForOf, SlicePipe, TaskComponent],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
   users = DUMMY_USERS;
-
+  selectedUserName = signal('');
   onSelectUser(userId: string): void {
     console.log(`User selected in App component: ${userId}`);
+    this.selectedUserName.set(this.users.find(user => user.id === userId)?.name || '');
   }
 }
