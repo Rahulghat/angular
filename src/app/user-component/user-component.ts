@@ -1,6 +1,11 @@
 import { Component , INJECTOR, Input,input, Output,EventEmitter, output} from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 
+interface User {
+  id: string;
+  name: string;
+  avatar: string;
+}
 
 @Component({
   imports: [],
@@ -13,7 +18,7 @@ export class UserComponent {
 @Input({required: true}) name !: string ;
 @Input({required: true}) id!: string ;*/
 
-@Input() user: {id: string, name: string, avatar: string} = {id: '', name: '', avatar: ''};
+@Input({required: true}) user!:User;
 @Output() userSelected = new EventEmitter<string>();
 //userSelected = output<string>() ;
 get imagePath(): string {
