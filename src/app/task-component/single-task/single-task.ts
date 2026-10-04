@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class SingleTask {
 
+  @Input({required: true}) task!: any;
+
+
+
 }
