@@ -1,8 +1,11 @@
+import { NewTask } from './new-task/new-task';
 import { Component, Input } from '@angular/core';
 import { SingleTask } from './single-task/single-task';
 
+
+
 @Component({
-  imports: [SingleTask],
+  imports: [SingleTask,NewTask],
   selector: 'app-task-component',
   styleUrl: './task-component.css',
   templateUrl: './task-component.html',
@@ -10,6 +13,7 @@ import { SingleTask } from './single-task/single-task';
 export class TaskComponent {
   @Input({ required: true }) name!: string;
   @Input({ required: true }) id!: string;
+  isAddingTask = false;
 
   tasks = [
     {
@@ -153,5 +157,13 @@ export class TaskComponent {
 
   completeTask(taskId: string) {
     this.tasks = this.tasks.filter((task) => task.id !== taskId);
+  }
+
+  onAddTask() {
+    this.isAddingTask = true;
+  }
+
+  onCancelAddingTask() {
+    this.isAddingTask = false;
   }
 }
