@@ -1,16 +1,19 @@
 <app-header-component></app-header-component>
 <main>
   <ul id="users">
-    <!---- @for (user of users;track user.id) {
-      <li><app-user-component [avatar]="user.avatar" [name]="user.name" [id]="user.id"/></li>
+     @for (user of users;track user.id) {
+      <li><app-user-component [user]="user" (userSelected)="onSelectUser($event)" /></li>
     }
-  -->
+
+  <!--
     <li *ngFor="let user of users | slice: 0 : 10">
-      <app-user-component
-        [user]="user"
-        (userSelected)="onSelectUser($event)"
-      />
-    </li>
+      <app-user-component [user]="user" (userSelected)="onSelectUser($event)" />
+    </li> -->
   </ul>
-  <app-task-component [username]="user().name"/>
+  @if(selectedUserId!=='') {
+  <app-task-component [name]="selectedUser!.name" [id]="selectedUser!.id" />
+  }
+  @else {
+    <p id="fallback"> pls select user</p>
+  }
 </main>
