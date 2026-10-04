@@ -1,11 +1,6 @@
 import { Component , INJECTOR, Input,input, Output,EventEmitter, output} from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
-
-interface User {
-  id: string;
-  name: string;
-  avatar: string;
-}
+import { User } from './user.model';
 
 @Component({
   imports: [],
