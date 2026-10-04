@@ -13,9 +13,9 @@ import { TaskComponent } from './task-component/task-component';
 })
 export class App {
   users = DUMMY_USERS;
-  selectedUserName = signal('');
+  user = signal({ id: '', name: '', avatar: '' });
   onSelectUser(userId: string): void {
     console.log(`User selected in App component: ${userId}`);
-    this.selectedUserName.set(this.users.find(user => user.id === userId)?.name || '');
+    this.user.set(this.users.find(user => user.id === userId) || { id: '', name: '', avatar: '' });
   }
 }

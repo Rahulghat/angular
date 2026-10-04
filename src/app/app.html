@@ -7,12 +7,10 @@
   -->
     <li *ngFor="let user of users | slice: 0 : 10">
       <app-user-component
-        [avatar]="user.avatar"
-        [name]="user.name"
-        [id]="user.id"
+        [user]="user"
         (userSelected)="onSelectUser($event)"
       />
     </li>
   </ul>
-  <app-task-component [username]="selectedUserName()"/>
+  <app-task-component [username]="user().name"/>
 </main>

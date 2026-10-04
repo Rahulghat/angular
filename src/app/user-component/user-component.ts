@@ -9,16 +9,18 @@ import { DUMMY_USERS } from '../dummy-users';
   templateUrl: './user-component.html',
 })
 export class UserComponent {
-@Input({required: true}) avatar!: string ;
-name = input<string>() ;
-@Input({}) id!: string ;
+/*@Input({required: true}) avatar!: string ;
+@Input({required: true}) name !: string ;
+@Input({required: true}) id!: string ;*/
+
+@Input() user: {id: string, name: string, avatar: string} = {id: '', name: '', avatar: ''};
 @Output() userSelected = new EventEmitter<string>();
 //userSelected = output<string>() ;
 get imagePath(): string {
-    return `assets/users/${this.avatar}`;
+    return `assets/users/${this.user.avatar}`;
   }
   onSelectUser(): void {
-    console.log(`User selected: ${this.name}`);
-    this.userSelected.emit(this.id);
+    console.log(`User selected: ${this.user.id}`);
+    this.userSelected.emit(this.user.id);
   }
 }
