@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { task } from './task,model';
 @Component({
   imports: [],
   selector: 'app-single-task',
@@ -6,9 +7,9 @@ import { Component, Input } from '@angular/core';
   templateUrl: './single-task.html',
 })
 export class SingleTask {
-
-  @Input({required: true}) task!: any;
-
-
-
+  @Input({ required: true }) task!: task;
+  @Output() complete = new EventEmitter<string>();
+  onCompleteTask() {
+    this.complete.emit(this.task.id);
+  }
 }
