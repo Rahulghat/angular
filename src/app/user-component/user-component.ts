@@ -19,7 +19,9 @@ export class UserComponent {
   @Input({ required: true }) selected!: Boolean;
   //userSelected = output<string>() ;
   get imagePath(): string {
-    return `assets/users/${this.user.avatar}`;
+    return this.user.avatar.startsWith('http')
+      ? this.user.avatar
+      : `assets/users/${this.user.avatar}`;
   }
   onSelectUser(): void {
     console.log(`User selected: ${this.user.id}`);

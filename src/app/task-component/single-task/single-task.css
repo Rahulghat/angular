@@ -1,7 +1,9 @@
 article {
   padding: 1rem;
-  color: #25113d;
-  background-color: #bf9ee5;
+  color: #382b16;
+  background-color: #fff4b8;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
 
 h2 {
@@ -9,29 +11,29 @@ h2 {
 }
 
 time {
-  color: #3c2c50;
+  color: #5d4a22;
 }
 
-.actions {
+.action {
   text-align: right;
   margin: 0;
 }
 
-.actions button {
+.action button {
   font: inherit;
   font-size: 0.9rem;
   cursor: pointer;
-  background-color: #380774;
-  color: #decdf2;
+  background-color: #f0c94a;
+  color: #2f220d;
   border-radius: 4px;
   padding: 0.5rem 1.5rem;
   border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
-.actions button:hover,
-.actions button:active {
-  background-color: #4a0774;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+.action button:hover,
+.action button:active {
+  background-color: #e4b43b;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
 }

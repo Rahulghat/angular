@@ -5,8 +5,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.35rem 0.5rem;
-    background-color: #433352;
-    color: #c3b3d1;
+    background-color: #f5e7a5;
+    color: #3c2d17;
     border: none;
     font: inherit;
     cursor: pointer;
@@ -18,8 +18,8 @@
   button:hover,
   button:active,
   .active {
-    background-color: #9965dd;
-    color: #150722;
+    background-color: #f3cf58;
+    color: #2a1d0a;
   }
 
   img {
