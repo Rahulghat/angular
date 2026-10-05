@@ -2,7 +2,7 @@
 <main>
   <ul id="users">
      @for (user of users;track user.id) {
-      <li><app-user-component [user]="user" (userSelected)="onSelectUser($event)" /></li>
+      <li><app-user-component [user]="user" (userSelected)="onSelectUser($event)" [selected]="user.id===selectedUserId" /></li>
     }
 
   <!--
@@ -11,7 +11,7 @@
     </li> -->
   </ul>
   @if(selectedUserId!=='') {
-  <app-task-component [name]="selectedUser!.name" [id]="selectedUser!.id" />
+  <app-task-component [name]="selectedUser!.name" [id]="selectedUser!.id"  />
   }
   @else {
     <p id="fallback"> pls select user</p>
