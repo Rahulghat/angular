@@ -1,8 +1,8 @@
 import { NewTask } from './new-task/new-task';
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { SingleTask } from './single-task/single-task';
-import { DUMMY_TASKS } from '../dummy-tasks';
 import { NewTaskData } from './new-task/NewTask-Data.model';
+import { TaskService } from './task.service';
 
 
 @Component({
@@ -14,16 +14,15 @@ import { NewTaskData } from './new-task/NewTask-Data.model';
 export class TaskComponent {
   @Input({ required: true }) name!: string;
   @Input({ required: true }) id!: string;
+  private readonly taskService = inject(TaskService);
   isAddingTask = false;
 
-  tasks = [...DUMMY_TASKS];
-
   get selectedUserTasks() {
-    return this.tasks.filter((task) => task.userId === this.id);
+    return this.taskService.tasks().filter((task) => task.userId === this.id);
   }
 
   completeTask(taskId: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== taskId);
+    this.taskService.deleteTask(taskId);
   }
 
   onAddTask() {
@@ -35,14 +34,7 @@ export class TaskComponent {
   }
 
   onSubmitNewTask(newTask: NewTaskData) {
-
-    this.tasks.unshift({
-      id:new Date().getMilliseconds().toString(),
-      userId: this.id,
-      title: newTask.title,
-      summary: newTask.summary,
-      dueDate: newTask.dueDate,
-    });
+    this.taskService.addTask(this.id, newTask);
     this.isAddingTask = false;
   }
 }
