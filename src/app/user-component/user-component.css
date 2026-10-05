@@ -5,8 +5,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.35rem 0.5rem;
-    background-color: #f5e7a5;
-    color: #3c2d17;
+    background-color: var(--color-surface-soft);
+    color: var(--color-text);
     border: none;
     font: inherit;
     cursor: pointer;
@@ -18,15 +18,15 @@
   button:hover,
   button:active,
   .active {
-    background-color: #f3cf58;
-    color: #2a1d0a;
+    background-color: var(--color-accent);
+    color: #ffffff;
   }
 
   img {
     width: 2rem;
     object-fit: contain;
     border-radius: 50%;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-soft);
   }
 
   span {

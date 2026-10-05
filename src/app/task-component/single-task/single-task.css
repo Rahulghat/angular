@@ -1,9 +1,9 @@
 article {
   padding: 1rem;
-  color: #382b16;
-  background-color: #fff4b8;
+  color: var(--color-text);
+  background-color: var(--color-surface-soft);
   border-radius: 8px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-soft);
 }
 
 h2 {
@@ -11,7 +11,7 @@ h2 {
 }
 
 time {
-  color: #5d4a22;
+  color: var(--color-text-muted);
 }
 
 .action {
@@ -23,8 +23,8 @@ time {
   font: inherit;
   font-size: 0.9rem;
   cursor: pointer;
-  background-color: #f0c94a;
-  color: #2f220d;
+  background-color: var(--color-accent);
+  color: #ffffff;
   border-radius: 4px;
   padding: 0.5rem 1.5rem;
   border: none;
@@ -34,6 +34,6 @@ time {
 
 .action button:hover,
 .action button:active {
-  background-color: #e4b43b;
+  background-color: var(--color-accent-hover);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
 }

@@ -1,5 +1,5 @@
 .backdrop {
-  background-color: rgba(24, 19, 8, 0.7);
+  background-color: rgba(8, 5, 14, 0.78);
   position: fixed;
   top: 0;
   left: 0;
@@ -10,10 +10,10 @@
 dialog {
   width: 90%;
   max-width: 30rem;
-  background-color: #fff7d6;
+  background-color: var(--color-surface);
   border-radius: 6px;
   border: none;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-soft);
   overflow: hidden;
   padding: 1rem;
   top: 5rem;
@@ -21,14 +21,14 @@ dialog {
 
 h2 {
   margin: 0;
-  color: #3c2d17;
+  color: var(--color-text);
 }
 
 label {
   display: block;
   font-weight: bold;
   font-size: 0.85rem;
-  color: #7b5f2d;
+  color: var(--color-text-muted);
 }
 
 input,
@@ -37,8 +37,9 @@ textarea {
   font: inherit;
   padding: 0.15rem 0.25rem;
   border-radius: 4px;
-  border: 1px solid #d4b75a;
-  background-color: #fff9e6;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-soft);
+  color: var(--color-text);
 }
 
 .actions {
@@ -58,23 +59,24 @@ button {
 }
 
 button[type="button"] {
-  color: #7b5f2d;
+  color: var(--color-text-muted);
 }
 
 button[type="button"]:hover,
 button[type="button"]:active {
-  color: #4a3a1d;
+  color: var(--color-text);
 }
 
 button[type="submit"] {
-  background-color: #f2c44a;
+  background-color: var(--color-accent);
+  color: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover,
 button[type="submit"]:active {
-  background-color: #e5b12e;
+  background-color: var(--color-accent-hover);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
 }
 
