@@ -1,7 +1,8 @@
 #task {
   padding: 1rem;
   border-radius: 8px;
-  max-height: 60vh;
+  max-height: 1000vh;
+  height: auto;
   overflow: auto;
   background-color: #fff7d6;
   color: #3b2d18;
