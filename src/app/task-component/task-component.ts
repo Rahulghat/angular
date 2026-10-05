@@ -1,7 +1,7 @@
 import { NewTask } from './new-task/new-task';
 import { Component, Input } from '@angular/core';
 import { SingleTask } from './single-task/single-task';
-
+import { DUMMY_TASKS } from '../dummy-tasks';
 
 
 @Component({
@@ -15,141 +15,7 @@ export class TaskComponent {
   @Input({ required: true }) id!: string;
   isAddingTask = false;
 
-  tasks = [
-    {
-      id: 't1',
-      userId: 'u1',
-      title: 'Master Angular',
-      summary: 'Learn all the basic and advanced features of Angular & how to apply them.',
-      dueDate: '2025-12-31',
-    },
-    {
-      id: 't2',
-      userId: 'u3',
-      title: 'Build first prototype',
-      summary: 'Build a first prototype of the online shop website',
-      dueDate: '2024-05-31',
-    },
-    {
-      id: 't3',
-      userId: 'u3',
-      title: 'Prepare issue template',
-      summary: 'Prepare and describe an issue template which will help with project management',
-      dueDate: '2024-06-15',
-    },
-    {
-      id: 't4',
-      userId: 'u1',
-      title: 'Review component architecture',
-      summary: 'Review the application components and document opportunities to simplify them.',
-      dueDate: '2026-10-12',
-    },
-    {
-      id: 't5',
-      userId: 'u2',
-      title: 'Plan weekly priorities',
-      summary: "Organize this week's work and identify the most important deliverables.",
-      dueDate: '2026-10-08',
-    },
-    {
-      id: 't6',
-      userId: 'u2',
-      title: 'Update project documentation',
-      summary: 'Bring the project documentation up to date with the latest changes.',
-      dueDate: '2026-10-16',
-    },
-    {
-      id: 't7',
-      userId: 'u3',
-      title: 'Test the online shop prototype',
-      summary: 'Run through the main shopping flow and record any issues found.',
-      dueDate: '2026-10-10',
-    },
-    {
-      id: 't8',
-      userId: 'u4',
-      title: 'Prepare sprint notes',
-      summary: 'Summarize completed work and outline priorities for the next sprint.',
-      dueDate: '2026-10-09',
-    },
-    {
-      id: 't9',
-      userId: 'u4',
-      title: 'Check accessibility',
-      summary: 'Review key screens for keyboard navigation and accessible labels.',
-      dueDate: '2026-10-19',
-    },
-    {
-      id: 't10',
-      userId: 'u5',
-      title: 'Review user feedback',
-      summary: 'Group recent feedback into themes and highlight follow-up actions.',
-      dueDate: '2026-10-13',
-    },
-    {
-      id: 't11',
-      userId: 'u5',
-      title: 'Create a release checklist',
-      summary: 'Prepare a checklist for verifying the next application release.',
-      dueDate: '2026-10-21',
-    },
-    {
-      id: 't12',
-      userId: 'u6',
-      title: 'Improve loading performance',
-      summary: 'Identify slow-loading screens and propose practical improvements.',
-      dueDate: '2026-10-14',
-    },
-    {
-      id: 't13',
-      userId: 'u6',
-      title: 'Verify responsive layouts',
-      summary: 'Check that the application works well on mobile and desktop sizes.',
-      dueDate: '2026-10-22',
-    },
-    {
-      id: 't14',
-      userId: 'u7',
-      title: 'Organize design assets',
-      summary: 'Group and label the shared design assets so the team can find them easily.',
-      dueDate: '2026-10-15',
-    },
-    {
-      id: 't15',
-      userId: 'u7',
-      title: 'Review dashboard layout',
-      summary: 'Check the dashboard layout and suggest improvements to its information hierarchy.',
-      dueDate: '2026-10-23',
-    },
-    {
-      id: 't16',
-      userId: 'u8',
-      title: 'Draft onboarding guide',
-      summary: 'Write a concise guide to help new team members get started.',
-      dueDate: '2026-10-17',
-    },
-    {
-      id: 't17',
-      userId: 'u8',
-      title: 'Triage open issues',
-      summary: 'Review open issues, add useful labels, and identify urgent items.',
-      dueDate: '2026-10-26',
-    },
-    {
-      id: 't18',
-      userId: 'u9',
-      title: 'Check project milestones',
-      summary: 'Review upcoming milestones and confirm owners and target dates.',
-      dueDate: '2026-10-20',
-    },
-    {
-      id: 't19',
-      userId: 'u9',
-      title: 'Prepare team update',
-      summary: 'Share a short update on current progress, risks, and next steps.',
-      dueDate: '2026-10-28',
-    },
-  ];
+  tasks = [...DUMMY_TASKS];
 
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.id);
