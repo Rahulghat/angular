@@ -1,9 +1,10 @@
 import { Component, INJECTOR, Input, input, Output, EventEmitter, output } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 import { User } from './user.model';
+import { Card } from '../shared/card/card';
 
 @Component({
-  imports: [],
+  imports: [Card],
   selector: 'app-user-component',
   styleUrl: './user-component.css',
   templateUrl: './user-component.html',
